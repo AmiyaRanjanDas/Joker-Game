@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Joker</title>
+</head>
+
+<body onload="getItems()">
+    <div class="game container">
+        <div class="text-center">
+            <h1>Score Card</h1>
+
+            <table class="table m-0">
+                <thead>
+                    <tr>
+                        <th scope="col">Team1<br><span id="team1"> </span></th>
+                        <th scope="col">Team2<br><span id="team2"> </span></th>
+                    </tr>
+                </thead>
+                <tbody id="gameDataTable">
+                    <!-- //data get loaded by getTable function -->
+                </tbody>
+            </table>
+
+            <table class="table">
+                <tr id="stage1">
+                    <td><input type="number" placeholder="point1" id="currTeam1" class="form-control"></td>
+                    <td><input type="number" placeholder="point2" id="currTeam2" class="form-control"></td>
+                </tr>
+                <tr id="stage2" style="display:none;">
+                    <td>
+                        <div class="form-check form-switch doCen">
+                            <input class="form-check-input" type="checkbox" role="switch" id="switch1">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-check form-switch doCen">
+                            <input class="form-check-input" type="checkbox" role="switch" id="switch2">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <button type="button" id="endBtn1" class="btn btn-primary m-auto" onclick="addPoint()">
+                Add point
+            </button>
+
+            <button type="button" id="endBtn2" class="btn btn-primary" style="margin:auto;border:3px solid blue;"
+                onclick="validate()">
+                Validate
+            </button>
+
+            <table class="table my-4">
+                <tr>
+                    <td id="totTeam1">12</td>
+                    <td id="totTeam2">43</td>
+                </tr>
+            </table>
+
+            <button type="button" id="endBtn2" class="btn btn-secondary btn-sm" style="margin:auto;border:3px solid rgb(0, 0, 0);"
+                onclick="Undo()">
+                Undo
+            </button>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

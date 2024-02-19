@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Joker</title>
+</head>
+
+<body>
+    <div class="home">
+        <div class="text-center">
+            <img class="img-fluid"
+                src="https://www.seekpng.com/png/detail/68-682679_pack-deck-playing-cards-deck-of-cards-cartoon.png"
+                alt="" />
+            <h1>Card Game</h1>
+            <button type="button" class="btn btn-primary" onclick="createGame()">
+                New Game
+            </button>
+        </div>
+    </div>
+
+    <script>
+        localStorage.setItem("stage","stage1");
+        function createGame() {
+            var team1 = prompt("Enter Team1 name:");
+            if (team1 == "") {
+                alert("Please Enter a valid name for Team1");
+                createGame();
+            }
+            localStorage.setItem("team1", team1);
+
+            var team2 = prompt("Enter Team2 name:");
+            if (team2 == "") {
+                alert("Please Enter a valid name for Team2");
+                createGame();
+            }
+            localStorage.setItem("team2", team2);
+            localStorage.setItem("arr1","[]");
+            localStorage.setItem("arr2", "[]");
+
+            window.location.replace("game.html");
+        }
+    </script>
+</body>
+
+</html>

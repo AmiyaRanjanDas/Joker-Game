@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Syne", sans-serif;
+}
+.btn{
+    font-weight: 700;
+    font-family: "Syne", sans-serif;
+}
+td{
+    width: 50%;
+    font-weight: 700;
+    border: 3px solid rgb(255, 255, 255);
+}
+.home{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    background: #f6f6f6;
+}
+.home img{
+    width: 40%;
+}
+.home h1{
+    font-weight: 800;
+    font-size: 5vw;
+    padding:2vw 0;
+}
+/* ==================game============== */
+.game h1{
+    font-weight: 800;
+    font-size: 2rem;
+    padding:3vw 0;
+    margin: 0;
+}
+.game span{
+    font-weight: 800;
+    color: rgb(15, 0, 153);
+}
+.doCen{
+    margin: 0 40%;
+}
+
+#totTeam1,#totTeam2{
+    background:rgb(0, 0, 0);
+    color: white;
+    width:50%;
+    font-family: 5.4vw;
+}
+
