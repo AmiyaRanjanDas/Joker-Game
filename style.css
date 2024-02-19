@@ -40,13 +40,14 @@ td{
     color: rgb(15, 0, 153);
 }
 .doCen{
-    margin: 0 40%;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
 }
-
 #totTeam1,#totTeam2{
     background:rgb(0, 0, 0);
     color: white;
     width:50%;
     font-family: 5.4vw;
 }
-
