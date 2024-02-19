@@ -21,7 +21,7 @@ function getItems() {
         document.getElementById("endBtn2").style.display = "none";
     }else{        
         document.getElementById("stage1").style.display = "none";
-        document.getElementById("stage2").style.display = "contents";
+        document.getElementById("stage2").style.display = "flex";
         document.getElementById("endBtn1").style.display = "none";
         document.getElementById("endBtn2").style.display = "block";
     }
