@@ -5,7 +5,7 @@ var arr2=[];
 function getItems() {
     team1 = localStorage.getItem("team1");
     team2 = localStorage.getItem("team2");
-
+    // console.log(team1,team2);
     var ar1 = localStorage.getItem("arr1");
     var ar2 = localStorage.getItem("arr2");
     arr1=JSON.parse(ar1);
@@ -37,23 +37,32 @@ function getTable(){
         let td1 = document.createElement("TD");
         if(arr1[i]<0){
             td1.style.background='rgb(255, 159, 159)';
-        }else{
-            td1.style.background='rgb(173, 233, 255)';
+            td1.innerHTML = arr1[i];
+        }else if(arr1[i]>10){
+            td1.style.background='linear-gradient(29deg, rgba(0,255,102,1) 0%, rgba(0,217,218,1) 23%, rgba(0,105,215,1) 44%, rgba(185,0,153,1) 66%, rgba(255,0,194,1) 87%)';
+            td1.innerHTML = "🎭\xa0\xa0\xa0"+ arr1[i] +"\xa0\xa0\xa0🎭";
         }
-        td1.innerHTML = arr1[i];
+        else{
+            td1.style.background='rgb(173, 233, 255)';
+            td1.innerHTML = arr1[i];
+        }
         let td2 = document.createElement("TD");
-        td2.innerHTML = arr2[i];
         if(arr2[i]<0){
             td2.style.background='rgb(255, 159, 159)';
-        }else{
+            td2.innerHTML = arr2[i];
+        }else if(arr2[i]>10){
+            td2.style.background='linear-gradient(29deg, rgba(0,255,102,1) 0%, rgba(0,217,218,1) 23%, rgba(0,105,215,1) 44%, rgba(185,0,153,1) 66%, rgba(255,0,194,1) 87%)';
+            td2.innerHTML = "🎭\xa0\xa0\xa0"+ arr2[i] +"\xa0\xa0\xa0🎭";
+        }
+        else{
             td2.style.background='rgb(173, 233, 255)';
+            td2.innerHTML = arr2[i];
         }
         tr.appendChild(td1);
         tr.appendChild(td2);
         gameDataTable.appendChild(tr);
       };
 
-      console.log(arr1);
       let sum = 0;
       arr1.forEach((el) => sum += el);
       
@@ -64,7 +73,7 @@ function getTable(){
 function addPoint(){
     var p1=document.getElementById("currTeam1").value;
     var p2=document.getElementById("currTeam2").value;
-    if(p1<4 || p2<4 || p1=='' || p2==''){
+    if(p1<4 || p2<4 || p1=='' || p2=='' || p1>13 || p2>13){
         alert("Invalid point");
     }
     else{
@@ -110,14 +119,24 @@ function validate(){
                 popedElem=popedElem/2;
             }
             arr1.push(popedElem*(-1));
-        } 
+        }
+        else{
+            if(arr1[arr1.length - 1]>10){
+                wow();
+            }
+        }
         if (switch2.checked) {
             var popedElem=arr2.pop();
             if(popedElem>=20){
                 popedElem=popedElem/2;
             }
             arr2.push(popedElem*(-1));
-        } 
+        }
+        else{
+            if(arr2[arr2.length - 1]>10){
+                wow();
+            }
+        }
 
         var strArr1=JSON.stringify(arr1);
         var strArr2=JSON.stringify(arr2);
@@ -141,3 +160,9 @@ function Undo(){
     }
 }
 
+
+const canvas = document.getElementById('confeti')
+const jsConfetti = new JSConfetti()
+function wow(){
+    jsConfetti.addConfetti();
+}
