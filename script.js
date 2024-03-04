@@ -36,26 +36,26 @@ function getTable(){
         let tr = document.createElement("TR");
         let td1 = document.createElement("TD");
         if(arr1[i]<0){
-            td1.style.background='rgb(255, 159, 159)';
+            td1.style.background='rgb(255 47 47)';
             td1.innerHTML = arr1[i];
         }else if(arr1[i]>10){
             td1.style.background='linear-gradient(29deg, rgba(0,255,102,1) 0%, rgba(0,217,218,1) 23%, rgba(0,105,215,1) 44%, rgba(185,0,153,1) 66%, rgba(255,0,194,1) 87%)';
             td1.innerHTML = "🎭\xa0\xa0\xa0"+ arr1[i] +"\xa0\xa0\xa0🎭";
         }
         else{
-            td1.style.background='rgb(173, 233, 255)';
+            td1.style.background='rgb(0 182 255)';
             td1.innerHTML = arr1[i];
         }
         let td2 = document.createElement("TD");
         if(arr2[i]<0){
-            td2.style.background='rgb(255, 159, 159)';
+            td2.style.background='rgb(255 47 47)';
             td2.innerHTML = arr2[i];
         }else if(arr2[i]>10){
             td2.style.background='linear-gradient(29deg, rgba(0,255,102,1) 0%, rgba(0,217,218,1) 23%, rgba(0,105,215,1) 44%, rgba(185,0,153,1) 66%, rgba(255,0,194,1) 87%)';
             td2.innerHTML = "🎭\xa0\xa0\xa0"+ arr2[i] +"\xa0\xa0\xa0🎭";
         }
         else{
-            td2.style.background='rgb(173, 233, 255)';
+            td2.style.background='rgb(0 182 255)';
             td2.innerHTML = arr2[i];
         }
         tr.appendChild(td1);
@@ -73,7 +73,7 @@ function getTable(){
 function addPoint(){
     var p1=document.getElementById("currTeam1").value;
     var p2=document.getElementById("currTeam2").value;
-    if(p1<4 || p2<4 || p1=='' || p2=='' || p1>13 || p2>13){
+    if((p1<4 || p2<4 || p1=='' || p2=='' || p1>13 || p2>13 ) && arr1.length>0){
         alert("Invalid point");
     }
     else{

@@ -3,14 +3,26 @@
     margin: 0;
     font-family: "Syne", sans-serif;
 }
+body{
+    background: #46126a;
+}
 .btn{
     font-weight: 700;
     font-family: "Syne", sans-serif;
+    background: #b8fa00;
+    color: black;
+    border: none;
+}
+.btn:hover{
+    background: #76c000;
+    transition: 0.5s;
+}
+tr{
+    border-color: black;
 }
 td{
     width: 50%;
     font-weight: 700;
-    border: 3px solid rgb(255, 255, 255);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .home{
@@ -19,7 +31,6 @@ td{
     height: 100vh;
     width: 100%;
     justify-content: center;
-    background: #f6f6f6;
 }
 .home img{
     width: 40%;
@@ -28,27 +39,36 @@ td{
     font-weight: 800;
     font-size: 5vw;
     padding:2vw 0;
+    color: #b8fa00;
 }
 /* ==================game============== */
+
 .game h1{
     font-weight: 800;
     font-size: 2rem;
     padding:3vw 0;
     margin: 0;
+    color: #b8fa00;
 }
 .game span{
     font-weight: 800;
-    color: rgb(15, 0, 153);
+    color: #b8fa00;
 }
 .doCen{
     display: flex;
     justify-content: center;
-    /* width: 50%; */
     align-items: center;
 }
 #totTeam1,#totTeam2{
     background:rgb(0, 0, 0);
-    color: white;
+    color: #b8fa00;
+    border: none;
     width:50%;
     font-family: 5.4vw;
+}
+#fscore{
+    font-weight: 800;
+    font-size: 3.3vw;
+    padding:0 0 3vw;
+    color: #b8fa00;
 }
