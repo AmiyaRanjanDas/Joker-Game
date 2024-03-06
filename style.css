@@ -72,3 +72,28 @@ td{
     padding:0 0 3vw;
     color: #b8fa00;
 }
+
+
+
+.my-custom-scrollbar {
+    position: relative;
+    max-height: 220px;
+    overflow: auto;
+}
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+  .my-custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .my-custom-scrollbar::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  
+  .my-custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #b8fa00;
+    border-radius: 10px;
+    border: 2px solid #000000;
+  }

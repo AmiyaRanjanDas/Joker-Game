@@ -11,7 +11,8 @@ function getItems() {
     arr1=JSON.parse(ar1);
     arr2=JSON.parse(ar2);
 
-    getTable();      
+    getTable();  
+    finalPoints();    
 
     var stage = localStorage.getItem("stage");
     if(stage=="stage1"){
@@ -36,26 +37,26 @@ function getTable(){
         let tr = document.createElement("TR");
         let td1 = document.createElement("TD");
         if(arr1[i]<0){
-            td1.style.background='rgb(255 47 47)';
+            td1.style.background='rgb(255 40 88)';
             td1.innerHTML = arr1[i];
         }else if(arr1[i]>10){
             td1.style.background='linear-gradient(29deg, rgba(0,255,102,1) 0%, rgba(0,217,218,1) 23%, rgba(0,105,215,1) 44%, rgba(185,0,153,1) 66%, rgba(255,0,194,1) 87%)';
             td1.innerHTML = "🎭\xa0\xa0\xa0"+ arr1[i] +"\xa0\xa0\xa0🎭";
         }
         else{
-            td1.style.background='rgb(0 182 255)';
+            td1.style.background='rgb(0 255 128)';
             td1.innerHTML = arr1[i];
         }
         let td2 = document.createElement("TD");
         if(arr2[i]<0){
-            td2.style.background='rgb(255 47 47)';
+            td2.style.background='rgb(255 40 88)';
             td2.innerHTML = arr2[i];
         }else if(arr2[i]>10){
             td2.style.background='linear-gradient(29deg, rgba(0,255,102,1) 0%, rgba(0,217,218,1) 23%, rgba(0,105,215,1) 44%, rgba(185,0,153,1) 66%, rgba(255,0,194,1) 87%)';
             td2.innerHTML = "🎭\xa0\xa0\xa0"+ arr2[i] +"\xa0\xa0\xa0🎭";
         }
         else{
-            td2.style.background='rgb(0 182 255)';
+            td2.style.background='rgb(0 255 128)';
             td2.innerHTML = arr2[i];
         }
         tr.appendChild(td1);
@@ -63,7 +64,10 @@ function getTable(){
         gameDataTable.appendChild(tr);
       };
 
-      let sum = 0;
+      
+}
+function finalPoints() {
+    let sum = 0;
       arr1.forEach((el) => sum += el);
       
       document.getElementById("totTeam1").innerHTML=arr1.reduce((a, b) => a + parseInt(b), 0);
@@ -77,10 +81,10 @@ function addPoint(){
         alert("Invalid point");
     }
     else{
-        if(p1>=10){
+        if(p1>=10 && arr1.length>0){
             p1=p1*2;
         }
-        if(p2>=10){
+        if(p2>=10 && arr1.length>0){
             p2=p2*2;
         }
         arr1.push(p1);
@@ -100,6 +104,8 @@ function addPoint(){
 
         document.getElementById("gameDataTable").innerHTML="";
         getTable();
+        document.getElementById("currTeam1").value="";
+        document.getElementById("currTeam2").value="";
     }
 }
 
@@ -145,6 +151,7 @@ function validate(){
 
         document.getElementById("gameDataTable").innerHTML="";
         getTable();
+        finalPoints();
     }    
 }
 
@@ -157,6 +164,7 @@ function Undo(){
 
     document.getElementById("gameDataTable").innerHTML="";
     getTable();
+    finalPoints();
     }
 }
 
