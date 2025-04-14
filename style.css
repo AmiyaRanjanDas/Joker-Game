@@ -3,27 +3,27 @@
     margin: 0;
     font-family: "Syne", sans-serif;
 }
+:root {
+    --color0: #faedcd;
+    --color1: #dda15e;
+    --hoverColor1: #c78841;
+    --color2: #bc6c25;
+    --white: #ffffff;
+  }
 body{
-    background: #46126a;
+    background: var(--color0);
 }
+
 .btn{
     font-weight: 700;
     font-family: "Syne", sans-serif;
-    background: #b8fa00;
-    color: black;
+    background: var(--color1);
+    color: var(--white);
     border: none;
 }
 .btn:hover{
-    background: #76c000;
+    background: var(--hoverColor1);
     transition: 0.5s;
-}
-tr{
-    border-color: black;
-}
-td{
-    width: 50%;
-    font-weight: 700;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .home{
     display: flex;
@@ -33,44 +33,106 @@ td{
     justify-content: center;
 }
 .home img{
-    width: 40%;
+    width: 70%;
+    position: relative;
+    z-index: 2;
+}
+.home .head{
+    position: relative;
 }
 .home h1{
+    position: absolute;
     font-weight: 800;
-    font-size: 5vw;
     padding:2vw 0;
-    color: #b8fa00;
+    text-transform: uppercase;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: max-content;
 }
-/* ==================game============== */
+.home .head_1{
+    font-size: 4vw;
+    z-index: 1;
+    color:var(--color1);
+}
+.home .head_2{
+    z-index: 3;    
+    font-size: 4vw;
+    color:#92775b00;
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: var(--color1);
+}
 
-.game h1{
+/* ==================game============== */
+tr th{
+    background: var(--color1) !important;
+    color: #a55814 !important;
+}
+td{
+    width: 50%;
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.game .head{
+    position: relative;
+    margin:10px 25px;
+}
+.game .head h1{
+    position: relative;
     font-weight: 800;
     font-size: 2rem;
     padding:3vw 0;
     margin: 0;
-    color: #b8fa00;
+    text-transform: uppercase;    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: max-content;
+}
+.game .head_1{
+    z-index: 1;
+    color:var(--color1);
+}
+.game .head_2{
+    z-index: 3; 
+    color:#92775b00;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: var(--color1);
+}
+.game .head img{
+    position: relative;
+    height: 100px;
+    z-index: 2;
 }
 .game span{
     font-weight: 800;
-    color: #b8fa00;
+    color: var(--white);
+}
+.textboxDiv{
+    background: var(--color1);
 }
 .doCen{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.doCen h2{
+    color: var(--color2);
+}
 #totTeam1,#totTeam2{
-    background:rgb(0, 0, 0);
-    color: #b8fa00;
+    background:var(--color2);
+    color: var(--white);
     border: none;
     width:50%;
     font-family: 5.4vw;
 }
 #fscore{
     font-weight: 800;
-    font-size: 1.1rem;
-    padding:0 0 3vw;
-    color: #b8fa00;
+    font-size: 1rem;
+    padding:1vw 0 3vw;
+    color: var(--color2);
+    text-transform: uppercase;
 }
 
 
@@ -89,11 +151,11 @@ td{
   }
   
   .my-custom-scrollbar::-webkit-scrollbar-track {
-    background: #000000;
+    background: #9e2a2b;
   }
   
   .my-custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #b8fa00;
+    background-color: var(--color1);
     border-radius: 10px;
-    border: 2px solid #000000;
+    border: 2px solid #9e2a2b;
   }

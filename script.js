@@ -37,26 +37,28 @@ function getTable(){
         let tr = document.createElement("TR");
         let td1 = document.createElement("TD");
         if(arr1[i]<0){
-            td1.style.background='rgb(255 40 88)';
+            td1.style.background='#9e2a2b';
+            td1.style.color='white';
             td1.innerHTML = arr1[i];
         }else if(arr1[i]>10){
-            td1.style.background='linear-gradient(29deg, rgba(0,255,102,1) 0%, rgba(0,217,218,1) 23%, rgba(0,105,215,1) 44%, rgba(185,0,153,1) 66%, rgba(255,0,194,1) 87%)';
-            td1.innerHTML = "🎭\xa0\xa0\xa0"+ arr1[i] +"\xa0\xa0\xa0🎭";
+            td1.style.background='linear-gradient(29deg, #9e2a2b 10%, #fff3b0 44%,  #9e2a2b 87%)';
+            td1.innerHTML = "♤ ♡ ♧ ♢\xa0\xa0\xa0"+ arr1[i] +"\xa0\xa0\xa0♤ ♡ ♧ ♢";
         }
         else{
-            td1.style.background='rgb(0 255 128)';
+            td1.style.background='#fff3b0';
             td1.innerHTML = arr1[i];
         }
         let td2 = document.createElement("TD");
         if(arr2[i]<0){
-            td2.style.background='rgb(255 40 88)';
+            td2.style.background='#9e2a2b';
+            td2.style.color='white';
             td2.innerHTML = arr2[i];
         }else if(arr2[i]>10){
-            td2.style.background='linear-gradient(29deg, rgba(0,255,102,1) 0%, rgba(0,217,218,1) 23%, rgba(0,105,215,1) 44%, rgba(185,0,153,1) 66%, rgba(255,0,194,1) 87%)';
-            td2.innerHTML = "🎭\xa0\xa0\xa0"+ arr2[i] +"\xa0\xa0\xa0🎭";
+            td2.style.background='linear-gradient(28deg, #9e2a2b 10%, #fff3b0 44%,  #9e2a2b 90%)';
+            td2.innerHTML = "♤ ♡ ♧ ♢\xa0\xa0\xa0"+ arr2[i] +"\xa0\xa0\xa0♤ ♡ ♧ ♢";
         }
         else{
-            td2.style.background='rgb(0 255 128)';
+            td2.style.background='#fff3b0';
             td2.innerHTML = arr2[i];
         }
         tr.appendChild(td1);

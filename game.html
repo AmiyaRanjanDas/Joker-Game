@@ -20,13 +20,17 @@
     <canvas id="confeti" style="height: 0;"></canvas>
     <div class="game container">
         <div class="text-center">
-            <h1>Score Card</h1>
+            <div class="head">
+                <h1 class="head_1">Score Card</h1>
+                <h1 class="head_2">Score Card</h1>
+                <img class="img-fluid" src="./images/img.png" alt="">
+            </div>
 
             <table class="table m-0">
                 <thead>
                     <tr>
-                        <th scope="col" class="bg-black text-white">Team1<br><span id="team1"> </span></th>
-                        <th scope="col" class="bg-black text-white">Team2<br><span id="team2"> </span></th>
+                        <th scope="col">Team1<br><span id="team1"> </span></th>
+                        <th scope="col">Team2<br><span id="team2"> </span></th>
                     </tr>
                 </thead>
             </table>
@@ -37,28 +41,28 @@
             </table>
         </div>
 
-            <div class="mb-4 bg-black py-1">
+            <div class="mb-4 py-1 textboxDiv">
                 <div id="stage1">
                     <div class="row px-3 py-2">
-                        <div class="col"><input type="number" placeholder="point1" id="currTeam1" class="form-control" style="background:#b8fa00;border:none;font-weight:600;"></div>
-                        <div class="col"><input type="number" placeholder="point2" id="currTeam2" class="form-control" style="background:#b8fa00;border:none;font-weight:600;"></div>
+                        <div class="col"><input type="number" placeholder="point1" id="currTeam1" class="form-control" style="background:#faedcd;border:none;font-weight:600;"></div>
+                        <div class="col"><input type="number" placeholder="point2" id="currTeam2" class="form-control" style="background:#faedcd;border:none;font-weight:600;"></div>
                     </div>
                 </div>
                 <div id="stage2" style="display:none;">
                     <div class="row w-100">
                         <div class="col doCen">
-                            <h2 style="padding: 0 3vw;color: rgb(43, 217, 0);">+</h2>
+                            <h2 style="padding: 0 3vw;">+</h2>
                             <div class="form-check form-switch">                            
                                 <input class="form-check-input" type="checkbox" role="switch" id="switch1">
                             </div>
-                            <h2 style="padding: 0 1.7vw;color: rgb(163 0 0);">-</h2>
+                            <h2 style="padding: 0 1.7vw;">-</h2>
                         </div>
                         <div class="col doCen">
-                            <h2 style="padding: 0 3vw;color: rgb(43, 217, 0);">+</h2>
+                            <h2 style="padding: 0 3vw;">+</h2>
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" role="switch" id="switch2">
                             </div>
-                            <h2 style="padding: 0 1.7vw;color: rgb(163 0 0);">-</h2>
+                            <h2 style="padding: 0 1.7vw;">-</h2>
                         </div>
                     </div>
                 </div>
@@ -81,7 +85,7 @@
             </table>
 
             <h1 id="fscore">Final Score</h1>
-            <button type="button" id="endBtn2" class="btn btn-secondary btn-sm" style="margin:auto;border:3px solid #90c400;"
+            <button type="button" id="endBtn2" class="btn btn-secondary btn-sm" style="margin:auto;"
                 onclick="Undo()">
                 Undo
             </button>
